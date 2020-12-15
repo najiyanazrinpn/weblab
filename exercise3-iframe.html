@@ -1,0 +1,51 @@
+<html>
+<head>
+	<style>
+		iframe
+		{
+			border: none;
+		}
+		*
+		{
+			margin: 0;
+			padding: 0;
+			vertical-align: middle;
+		}
+		a
+		{
+			opacity: .8;
+			text-decoration: none;
+			color: #c30b4e;
+		}
+		a:hover
+		{
+			opacity: 1;
+			transition-duration: .1s;
+		}
+	</style>
+</head>
+<body>
+	<table>
+		<tr>
+			<td>
+				<a href="exercise1-page1.html" target="frame1">HOME</a>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<a href="exercise1-page3.html" target="frame2">Family details</a>
+			</td>
+		</tr>
+	</table>
+	<iframe srcdoc="
+	<table style='border-style: dashed;' border=1  cellpadding='10px'>
+		<tr border=1>
+			<td>Hi</td>
+			<td>This is inside an iframe</td>
+		</tr>
+	</table>
+	" border=1></iframe>
+	<iframe src="http://www.cet.ac.in" name="frame1" title="CET"></iframe><br>
+	<iframe src="http://hdtechno.com/images/sample/slider/HD_Technologies_Banner3.jpg" name="frame2"></iframe>
+</body>
+</html>
