@@ -1,0 +1,146 @@
+<html>
+<head>
+	<title>Job Application</title>
+	<style>
+		*
+		{ 
+			margin: 0;
+			padding: 0;
+			background-color: inherit;
+			border-color: inherit;
+		}
+		body
+		{
+			background: linear-gradient(rgba(227, 79, 136), rgba(132, 81, 173));
+		}
+		table,th,td
+		{
+			font-size: 1.5vw;
+			border: none;
+			padding: 3;
+		}
+		th,td
+		{
+			padding-left: 10px;
+			padding-right: 10px;
+		}
+		.th
+		{
+			text-align: left;
+		}
+		.input{width: 100%;}
+		.input,select,input[type=file]::-webkit-file-upload-button
+		{
+			background-color: inherit;
+		}
+		input[type=reset],input[type=submit]
+		{
+			background: linear-gradient(rgba(132, 81, 173), rgba(227, 79, 136));
+			border: none;
+			padding: 7px;
+			font-size: 1.25vw;
+			opacity: .9;
+		}
+		input[type=reset]:hover,input[type=submit]:hover
+		{
+			opacity: 1;
+		}
+	</style>
+</head>
+<body>
+	<center>
+	<h1><marquee behavior="alternate" scrollamount="9" style="font-size: 3vw;" onmouseover="this.stop()" onmouseout="this.start()">WELCOME TO THE FRESHER'S WORLD!!!</marquee></h1>
+	<form class="form1">
+	<table  style="background-color: rgba(255,255,255, 0.6);" cellspacing="0">
+		<caption style="font-weight: bolder; font-variant-caps: small-caps; letter-spacing: 2px; font-size: 2vw;">Registeration Form</caption>
+		<tr>
+			<th class="th">Name</th>
+			<th>:</th>
+			<td><input type="text" class="input" name="name"></td>
+		</tr>
+		<tr>
+			<th class="th">Age</th>
+			<th>:</th>
+			<td>
+				<select>
+					<option>19</option>
+					<option>20</option>
+					<option>21</option>
+					<option>22</option>
+					<option>23</option>
+					<option>24</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<th class="th">Password</th>
+			<th>:</th>
+			<td><input type="password" class="input" name="pass"></td>
+		</tr>
+		<tr>
+			<th class="th">Re-enter Password</th>
+			<th>:</th>
+			<td><input type="password" class="input" name="cpass"></td>
+		</tr>
+		<tr>
+			<th class="th">Select your security question</th>
+			<th>:</th>
+			<td>
+				<input type="radio" name="security">What is your pet name?<br>
+				<input type="radio" name="security">Who is your best friend?<br>
+				<input type="radio" name="security">Which is your favourite color?<br>
+				<input type="radio" name="security">Who is your favourite teacher?
+			</td>
+		</tr>
+		<tr>
+			<th class="th">Answer of security question</th>
+			<th>:</th>
+			<td><input type="text" class="input" name="secans"></td>
+		</tr>
+		<tr>
+			<th class="th">Email id</th>
+			<th>:</th>
+			<td><input type="email" class="input" name="email"></td>
+		</tr>
+		<tr>
+			<th class="th">Languages known</th>
+			<th>:</th>
+			<td>
+				<input type="checkbox" name="language1">English<br>
+				<input type="checkbox" name="language1">Malayalam<br>
+				<input type="checkbox" name="language1">Hindi<br>
+			</td>
+		</tr>
+		<tr>
+			<th class="th">Phone number</th>
+			<th>:</th>
+			<td>
+				<table width="100%">
+					<tr>
+						<th>Home</th>
+						<th>Office</th>
+					</tr>
+					<tr>
+						<th><input type="number" class="input" name="home"></th>
+						<th><input type="number" class="input" name="office"></th>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<th class="th">Upload CV</th>
+			<th>:</th>
+			<td><input type="file" name="cv"></td>
+		</tr>
+		<tr>
+			<td colspan="3" style="text-align: center;">
+				<input type="reset" value="Clear">
+				<input type="submit" name="Submit"><br>
+			</td>
+		</tr>
+		<tr><td colspan="3"></td></tr>
+	</table>
+	</form>
+	</center>
+</body>
+</html>
