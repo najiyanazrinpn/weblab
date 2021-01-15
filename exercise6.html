@@ -1,0 +1,186 @@
+<html>
+<head>
+	<title>String and Math</title>
+	<style>
+		.text
+		{
+			width: 100%;
+		}
+	</style>
+	<script type="text/javascript">
+		function showStr(strbtn)
+		{
+			var string1;
+			string1 = document.form1.string1.value;
+			if(strbtn.value === "len")
+				output = "Length of string1 is "+string1.length;
+			else if (strbtn.value === "index")
+			{
+				var sub;
+				sub = prompt("Enter the substring of which the index to be found: ");
+				if(string1.indexOf(sub)!=-1)
+					output = "First occurence of "+sub+" in the given string is at index "+string1.indexOf(sub);
+				else
+					output = ""+sub+" is not found";
+			}
+			else if (strbtn.value === "indexof")
+			{
+				var sub, i;
+				sub = prompt("Enter the substring of which the index to be found: ");
+				i = prompt("Enter the starting index: ");
+				if(string1.indexOf(sub,i)!=-1)
+					output = "Occurence of "+sub+" in the given string is at index "+string1.indexOf(sub,i);
+				else
+					output = ""+sub+" is not found";
+			}
+			else if (strbtn.value === "lastindex")
+			{
+				var sub;
+				sub = prompt("Enter the substring of which the index to be found: ");
+				if(string1.lastIndexOf(sub)!=-1)
+					output = "Last occurence of "+sub+" in the given string is at index "+string1.lastIndexOf(sub);
+				else
+					output = ""+sub+" is not found";
+			}
+			else if (strbtn.value === "lastindexof")
+			{
+				var sub, i;
+				sub = prompt("Enter the substring of which the last index to be found: ");
+				i = prompt("Enter the starting index: ");
+				if(string1.lastIndexOf(sub,i)!=-1)
+					output = "Last occurence of "+sub+" in the given string is at index "+string1.lastIndexOf(sub,i);
+				else
+					output = ""+sub+" is not found";
+			}
+			else if (strbtn.value === "search")
+			{
+				var sub;
+				sub = prompt("Enter the substring to be searched: ");
+				if(string1.search(sub)!=-1)
+					output = sub+" is at "+string1.search(sub);
+				else
+					output = sub+" is not found";
+			}
+			else if (strbtn.value === "slice")
+			{
+				var i1, i2;
+				i1 = prompt("Enter the starting index: ");
+				i2 = prompt("Enter the ending index: ");
+				output = "The extracted part is '"+string1.slice(i1,i2)+"'";
+			}
+			else if (strbtn.value === "substring")
+			{
+				var i1, i2;
+				i1 = prompt("Enter the starting index: ");
+				i2 = prompt("Enter the ending index: ");
+				output = "The substring is '"+string1.substring(i1,i2)+"'";
+			}
+			else if (strbtn.value === "substr")
+			{
+				var i1, i2;	
+				i1 = prompt("Enter the starting index: ");
+				i2 = prompt("Enter the number of characters: ");
+				output = "The substring is '"+string1.substr(i1,i2)+"'";
+			}
+			else if (strbtn.value === "replace")
+			{
+				var i1, i2;
+				i1 = prompt("Enter the substring to be replaced: ");
+				i2 = prompt("Enter the replacing string: ");
+				output = "The replaced string is '"+string1.replace(i1,i2)+"'";
+			}
+			else if (strbtn.value === "uppercase")
+				output = "The resultant string is '"+string1.toUpperCase()+"'";
+			else if (strbtn.value === "lowercase")
+				output = "The resultant string is '"+string1.toLowerCase()+"'";
+			else
+			{
+				string2 = prompt("Enter the string to be concatenated: ");
+				output = "The resultant string is '"+string1.concat(" ",string2)+"'";
+			}
+			alert(output);
+		}
+		function showMathResult(btn)
+		{
+			var num1;
+			num1 = parseFloat(document.form2.num1.value);
+			if(btn.value === "pow")
+			{
+				var num2 = parseFloat(prompt("Enter the power: "));
+				alert(num1+"^"+num2+" = "+Math.pow(num1,num2));
+			}
+			else if (btn.value === "round")
+				alert("round("+num1+") = "+Math.round(num1));
+			else if(btn.value === "sqrt")
+				alert("sqrt("+num1+") = "+Math.sqrt(num1));
+			else if (btn.value === "ceil")
+				alert("ceil("+num1+") = "+Math.ceil(num1));
+			else if(btn.value === "floor")
+				alert("floor("+num1+") = "+Math.floor(num1));
+			else if(btn.value === "abs")
+				alert("abs("+num1+") = "+Math.abs(num1));
+			else if(btn.value === "min")
+			{
+				var num2 = parseFloat(prompt("Enter the number2: "))
+				alert("min("+num1+", "+num2+") = "+Math.min(num1,num2));
+			}
+			else
+			{
+				var num2 = parseFloat(prompt("Enter the number2: "))
+				alert("max("+num1+", "+num2+") = "+Math.max(num1,num2));
+			}
+		}
+	</script>
+</head>
+<body>
+	<h1 align="center">String Functions</h1>
+	<form name="form1">
+		<table style="border: none;" align="center">
+			<tr>
+				<td>String</td>
+				<td>:</td>
+				<td><input type="text" name="string1" class="text"></td>
+			</tr>
+			<tr style="text-align: center;">
+				<td colspan=3>
+					<button name="strbtn" value="len" onclick="showStr(this)">Length</button>
+					<button name="strbtn" value="index" onclick="showStr(this)">Index</button>
+					<button name="strbtn" value="indexof" onclick="showStr(this)">Index after an index</button>
+					<button name="strbtn" value="lastindex" onclick="showStr(this)">Last index</button>
+					<button name="strbtn" value="lastindexof" onclick="showStr(this)">Last index after an index</button>
+					<button name="strbtn" value="search" onclick="showStr(this)">Search</button>
+					<button name="strbtn" value="slice" onclick="showStr(this)">Slice</button>
+					<button name="strbtn" value="substring" onclick="showStr(this)">Substring</button>
+					<button name="strbtn" value="substr" onclick="showStr(this)">Substr</button>
+					<button name="strbtn" value="replace" onclick="showStr(this)">Replace</button>
+					<button name="strbtn" value="uppercase" onclick="showStr(this)">To upper case</button>
+					<button name="strbtn" value="lowercase" onclick="showStr(this)">To lower case</button>
+					<button name="strbtn" value="concat" onclick="showStr(this)">Concatenate</button>
+				</td>
+			</tr>
+		</table>
+	</form>
+	<h1 align="center">Math Functions</h1>
+	<form name="form2">
+		<table style="border: none;" align="center">
+			<tr>
+				<td>Number</td>
+				<td>:</td>
+				<td><input type="text" name="num1" class="text"></td>
+			</tr>
+			<tr style="text-align: center;">
+				<td colspan=3>
+					<button name="math" value="pow" onclick="showMathResult(this)">Power</button>
+					<button name="math" value="round" onclick="showMathResult(this)">Round</button>
+					<button name="math" value="sqrt" onclick="showMathResult(this)">Square root</button>
+					<button name="math" value="ceil" onclick="showMathResult(this)">Ceiling value</button>
+					<button name="math" value="floor" onclick="showMathResult(this)">Floor value</button>
+					<button name="math" value="abs" onclick="showMathResult(this)">Absolute</button>
+					<button name="math" value="min" onclick="showMathResult(this)">Minimum</button>
+					<button name="math" value="max" onclick="showMathResult(this)">Maximum</button>
+				</td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>
