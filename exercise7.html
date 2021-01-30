@@ -1,0 +1,52 @@
+<html>
+<head>
+	<title>Calendar</title>
+	<style type="text/css">
+		/**
+		{
+			margin: 0;
+			padding: 0;
+		}*/
+		table
+		{
+			display: inline-grid;
+			margin: 10px 10px 10px 10px;
+		}
+		h1
+		{
+			text-align: center;
+		}
+	</style>
+	<script type="text/javascript">
+		var yr = parseInt(prompt("Enter a year"));
+		if (isNaN(yr))
+		{
+			alert("You have entered an invalid year!!!");
+		}
+		else{
+			document.write("<h1>Calendar of "+yr+"</h1>");
+			var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+			for (var k = 0; k<12; k++)
+			{
+				var c = new Date(yr,k);
+				var d = "<table border=1><caption>"+months[k]+"</caption><tr><th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thur</th><th>Fri</th><th>Sat</th></tr><tr>";
+				var day = c.getDay();
+				var j = (7-c.getDay())%7;
+				for (var i = 0; i < day; i++)
+					d+="<td></td>";
+				while(c.getMonth()==k)
+				{
+					d+="<td>"+c.getDate()+"</td>";
+					if(c.getDate()%7 == j)
+						d+="</tr><tr>";
+					c.setDate(c.getDate()+1);
+				}
+				d+="</table>";
+				document.write(d);
+			}
+		}
+	</script>
+</head>
+<body>
+</body>
+</html>
