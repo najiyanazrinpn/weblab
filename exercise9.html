@@ -1,0 +1,34 @@
+<html>
+<head>
+	<title>Random Background Color</title>
+	<style type="text/css">
+		*{color: linear-gradient(rgba(132, 81, 173), rgba(227, 79, 136));}
+		button
+		{
+			border: none;
+			border-radius: 5px;
+			background: linear-gradient(rgba(132, 81, 173), rgba(227, 79, 136));
+			font-size: 1.5vw;
+		}
+	</style>
+</head>
+<body>
+	<button id="mybutton" value="color">Change background color</button>
+	<p id="demo"></p>
+	<script>
+		document.getElementById("mybutton").addEventListener("click", colorfn);
+		function colorfn()
+		{
+			var randchar="";
+			var characters="ABCDEF0123456789";
+			var charlen = characters.length;
+			for (var i = 0; i < 6; i++)
+			{
+				randchar+=characters.charAt(Math.floor(Math.random()*charlen));
+			}
+			document.body.style.background="#"+randchar;
+			document.getElementById("demo").innerHTML="#"+randchar;
+		}
+	</script>
+</body>
+</html>

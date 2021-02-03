@@ -1,0 +1,137 @@
+<html>
+<head>
+	<title>Form validation</title>
+	<style type="text/css">
+		table
+		{
+			border: none;
+			width: 45%;
+			margin-top: 10%;
+		}
+		caption
+		{
+			font-size: 3vw;
+			letter-spacing: .1vw;
+			font-weight: bolder;
+			background-color: #308D46;
+			color: #fff;
+		}
+		input{width: 100%;}
+		a{color: red;}
+		button
+		{
+			background-color: #308D46;
+			font-size: 1.25vw;
+			color: #fff;
+		}
+	</style>
+	<script type="text/javascript">
+		function validate()
+		{
+			name = document.validatefrm.name.value;
+			email = document.validatefrm.email.value;
+			phno = document.validatefrm.phno.value;
+			uid = document.validatefrm.uid.value;
+			pass = document.validatefrm.pass.value;
+			cpass = document.validatefrm.cpass.value;
+			if ((name=="")||(email=="")||(phno=="")||(uid=="")||(pass=="")||(cpass==""))
+			{
+				alert("Please fill all the fields");
+				return false;
+			}
+			else
+			{
+				//Validating name
+				var characters = "1234567890~`@#$%^&*()_+-=:;',./<>?"+'"';
+				var f = 0;
+				for(var i in name)
+					if(characters.includes(name.charAt(i)))
+						f++;
+				if(f!=0)
+				{
+					alert("Name should not contain special characters and digits");
+					document.validatefrm.name.focus();
+					return false;
+				}
+				else if ((name.length<2)||(name.length>40))
+				{
+					alert("Number of characters in name should be between 2 and 40");
+					document.validatefrm.name.focus();
+					return false;
+				}
+				//Validating phone number
+				if(phno.length!=10)
+				{
+					alert("Please enter a valid phone number");
+					document.validatefrm.phno.focus();
+					return false;
+				}
+				//Validating password
+				var characters = /[ `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
+				if((pass.length<8))
+				{
+					alert("Password length must be atleat 8");
+					document.validatefrm.pass.value="";
+					document.validatefrm.pass.focus();
+					return false;
+				}
+				else if(((pass.toLowerCase()==pass)||(pass.toUpperCase()==pass)&&(characters.test(pass)))||(!(/\d/.test(pass)))||(characters.test(pass)==false))
+				{
+					alert("Password should contain atleast one uppercase letter, lowercase letter, digit and special character");
+					document.validatefrm.pass.value="";
+					document.validatefrm.pass.focus();
+					return false;
+				}
+				//Validating confirm password
+				if (pass!==cpass)
+				{
+					alert("Passwords should match each other");
+					document.validatefrm.cpass.value="";
+					document.validatefrm.cpass.focus();
+					return false;
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<form name="validatefrm" action="" method="post" onsubmit="return validate()">
+		<table align="center">
+			<caption>FORM VALIDATION</caption>
+			<tr>
+				<td>&nbsp;Name</td>
+				<td>:</td>
+				<td><input type="text" name="name" value=""></td>
+			</tr>
+			<tr>
+				<td>&nbsp;Email id</td>
+				<td>:</td>
+				<td><input type="email" name="email" value=""></td>
+			</tr>
+			<tr>
+				<td>&nbsp;Phone number</td>
+				<td>:</td>
+				<td><input type="number" name="phno" value=""></td>
+			</tr>
+			<tr>
+				<td>&nbsp;User ID</td>
+				<td>:</td>
+				<td><input type="text" name="uid" value=""></td>
+			</tr>
+			<tr>
+				<td>&nbsp;Password</td>
+				<td>:</td>
+				<td><input type="password" name="pass"></td>
+			</tr>
+			<tr>
+				<td>&nbsp;Confirm password</td>
+				<td>:</td>
+				<td><input type="password" name="cpass"></td>
+			</tr><tr>&nbsp;</tr>
+			<tr>
+				<td colspan="3" align="center"><button type="submit" value="submit">Submit</button></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>
