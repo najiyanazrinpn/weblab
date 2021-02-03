@@ -55,7 +55,7 @@
 				}
 				else if ((name.length<2)||(name.length>40))
 				{
-					alert("Number of characters in name should be between 2 and 40");
+					alert("Name should contain between 2 and 40 charaters");
 					document.validatefrm.name.focus();
 					return false;
 				}
@@ -72,6 +72,7 @@
 				{
 					alert("Password length must be atleat 8");
 					document.validatefrm.pass.value="";
+					document.validatefrm.cpass.value="";
 					document.validatefrm.pass.focus();
 					return false;
 				}
@@ -79,15 +80,17 @@
 				{
 					alert("Password should contain atleast one uppercase letter, lowercase letter, digit and special character");
 					document.validatefrm.pass.value="";
+					document.validatefrm.cpass.value="";
 					document.validatefrm.pass.focus();
 					return false;
 				}
 				//Validating confirm password
 				if (pass!==cpass)
 				{
-					alert("Passwords should match each other");
+					alert("Password mismatch");
+					document.validatefrm.pass.value="";
 					document.validatefrm.cpass.value="";
-					document.validatefrm.cpass.focus();
+					document.validatefrm.pass.focus();
 					return false;
 				}
 			}
@@ -98,6 +101,7 @@
 	<form name="validatefrm" action="" method="post" onsubmit="return validate()">
 		<table align="center">
 			<caption>FORM VALIDATION</caption>
+			<tr><th colspan="3">(Must fill all the fields)</th></tr>
 			<tr>
 				<td>&nbsp;Name</td>
 				<td>:</td>
