@@ -3,6 +3,11 @@
 	<title>Random Background Color</title>
 	<style type="text/css">
 		*{color: linear-gradient(rgba(132, 81, 173), rgba(227, 79, 136));}
+		table
+		{
+			position: relative;
+			top: 40%;
+		}
 		button
 		{
 			border: none;
@@ -13,21 +18,31 @@
 	</style>
 </head>
 <body>
-	<button id="mybutton" value="color">Change background color</button>
-	<p id="demo"></p>
+	<table align="center">
+		<tr>
+			<th>
+				Click the button below to change the background color
+			</th>
+		</tr>
+		<tr>
+			<th>
+				<button id="mybutton" value="color">Click me</button>
+				<p id="demo"></p>
+			</th>
+		</tr>
+	</table>
 	<script>
 		document.getElementById("mybutton").addEventListener("click", colorfn);
 		function colorfn()
 		{
 			var randchar="";
 			var characters="ABCDEF0123456789";
-			var charlen = characters.length;
 			for (var i = 0; i < 6; i++)
 			{
-				randchar+=characters.charAt(Math.floor(Math.random()*charlen));
+				randchar+=characters.charAt(Math.floor(Math.random()*16));
 			}
 			document.body.style.background="#"+randchar;
-			document.getElementById("demo").innerHTML="#"+randchar;
+			document.getElementById("demo").innerHTML="Color: #"+randchar;
 		}
 	</script>
 </body>
