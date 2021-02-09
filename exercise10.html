@@ -1,0 +1,27 @@
+<html>
+<head>
+	<title>Event Handling2</title>
+</head>
+<body>
+	<div id="demo">
+		<img src="http://1.bp.blogspot.com/-DBKZuXTelTI/Ta8Spkusm8I/AAAAAAAAB3o/RUzWKU1yayM/s1600/1186725323_esAnimeBoy.jpg" id="image" height="50%" alt="anime"><br>
+		<font id="text">Move the mouse pointer here and see the magic</font>
+	</div>
+	<script type="text/javascript">
+		document.getElementById('demo').addEventListener("mouseover",over);
+		document.getElementById('demo').addEventListener("mouseout",out);
+		function over()
+		{
+			document.getElementById('image').src="https://i.pinimg.com/originals/0d/3e/90/0d3e901a2fdcb92eeb48b37ec46af077.jpg";
+			document.getElementById('image').style.height="50%";
+			document.getElementById('text').innerHTML="This is an image of an anime girl";
+		}
+		function out()
+		{
+			document.getElementById('image').src="http://1.bp.blogspot.com/-DBKZuXTelTI/Ta8Spkusm8I/AAAAAAAAB3o/RUzWKU1yayM/s1600/1186725323_esAnimeBoy.jpg";
+			document.getElementById('image').style.height="50%";
+			document.getElementById('text').innerHTML="This is an image of an anime boy";
+		}
+	</script>
+</body>
+</html>
