@@ -11,8 +11,8 @@
 		else
 		{
 			$message = "";
-			$pattern = "/[a-zA-Z]{2,}\s[a-zA-Z]{1,}'?-?[a-zA-Z]{2,}\s?([a-zA-Z]{1,})?/";
-			if(preg_match($pattern, $name))
+			$pattern = str_replace(" ", 'a', $name);
+			if(preg_match("/[^a-zA-Z]/", $pattern))
 				$message.="| Invalid name";
 			$pattern = '/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/';
 			if(!preg_match($pattern, $email))
