@@ -41,15 +41,53 @@
 <html>
 <head>
 	<title>PHP Form Validation</title>
+	<style>
+		table
+		{
+			position: absolute;
+			top: 20%;
+			left: 30%;
+			width: 40%;
+			border: none;
+		}
+		caption { font-size: 25px; font-weight: bold;}
+		input { width: 100%; }
+		.dt { width: 6%; }
+	</style>
 </head>
 <body>
 	<form name="form" action="exercise11.php" method="post">
-		Name:<input type="text" name="name" placeholder="Enter your name"><br>
-		Email:<input type="text" name="email" placeholder="Enter your email"><br>
-		Phone no:<input type="number" name="phno" placeholder="Enter your phone number"><br>
-		Password:<input type="password" name="pass" placeholder="Enter password"><br>
-		Confirm password:<input type="password" name="cpass" placeholder="Re-enter password"><br>
-		<input type="submit" name="submit">
+		<table align="center">
+			<caption>FORM VALIDATION</caption>
+			<tr>
+				<td>Name</td>
+				<td class="dt">:</td>
+				<td><input type="text" name="name" placeholder="Enter your name"></td>
+			</tr>
+			<tr>
+				<td>Email</td>
+				<td class="dt">:</td>
+				<td><input type="text" name="email" placeholder="Enter your email"></td>
+			</tr>
+			<tr>
+				<td>Phone no</td>
+				<td class="dt">:</td>
+				<td><input type="number" name="phno" placeholder="Enter your phone number"></td>
+			</tr>
+			<tr>
+				<td>Password</td>
+				<td class="dt">:</td>
+				<td><input type="password" name="pass" placeholder="Enter password"></td>
+			</tr>
+			<tr>
+				<td>Confirm password</td>
+				<td class="dt">:</td>
+				<td><input type="password" name="cpass" placeholder="Re-enter password"></td>
+			</tr>
+			<tr>
+				<th colspan="3"><button type="submit" name="submit">Submit</button></th>
+			</tr>
+		</table>
 	</form>
 </body>
 </html>
